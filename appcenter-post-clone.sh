@@ -2,7 +2,7 @@
 # Download supplementary MIPS toolchains which have been removed from Android NDK r17 to fix Android RN builds
 # Underlying issue is https://github.com/facebook/react-native/issues/19321
 
-set -ex
+set -e
 
 export SUPPLEMENT_URL='https://appcenterbuildassets.azureedge.net/buildscripts/ndk-toolchains-supplement-r16b-r17.zip'
 
@@ -12,7 +12,7 @@ echo "Downloading Android NDK toolchains supplement…"
 wget -q -O ndk-supplement-temp.zip $SUPPLEMENT_URL
 
 echo "Expanding Android NDK toolchains supplement…"
-unzip -o ndk-supplement-temp.zip
+unzip -q -o ndk-supplement-temp.zip
 rm ndk-supplement-temp.zip
 
 popd
